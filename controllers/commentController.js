@@ -62,7 +62,7 @@ exports.getAll = async(req, res)=>{
           const comments = await commentModel.find()
           const allComments = comments.length
           if(allComments === 0){
-           return res.status(200).json({
+           return res.status(204).json({
                 message: 'There are no comments under the post'
             })
           } else{

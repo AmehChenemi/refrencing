@@ -6,10 +6,8 @@ const {createPost, getOne, getAll, update, deletePost} = require('../controllers
 router.post('/newblog', createPost)
 router.get('/oneblog/:id', getOne)
 router.get('/getall-posts', getAll)
-router.patch('/update-posts/:id', update)
-router.delete('/delete/:id', deletePost)
-// router.delete('/delete-posts/:id', deleteOne)
-// router.delete('/delete-posts/:id', deletePostAndComments)
+router.patch('/update-post/:id', update)
+router.delete('/delete-post/:id', deletePost)
 
 
 module.exports = router

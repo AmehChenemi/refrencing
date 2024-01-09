@@ -6,7 +6,7 @@ const {newComment, getOne, getAll, update, deleteComment} = require('../controll
 router.post('/newcomment', newComment)
 router.get('/getone/:id', getOne)
 router.get('/getall-comments', getAll)
-router.patch('/update/:id', update)
-router.delete('/delete/:id', deleteComment)
+router.patch('/update-comment/:id', update)
+router.delete('/delete-comment/:id', deleteComment)
 
 module.exports = router

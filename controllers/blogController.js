@@ -48,7 +48,7 @@ exports.getAll = async(req, res)=>{
           const posts = await blogModel.find()
           const allPosts = posts.length
           if(allPosts=== 0){
-           return res.status(200).json({
+           return res.status(204).json({
                 message: 'There are no posts under this blog'
             })
           } else{
@@ -119,67 +119,3 @@ exports.deletePost = async(req, res)=>{
 }
 
 
-
-// exports.deleteOne = async (req, res) => {
-//     try {
-//         const id = req.params.id;
-//         const deletedPost = await blogModel.findByIdAndDelete(id);
-        
-
-
-//         if (!deletedPost) {
-//             return res.status(404).json({
-//                 message: 'Cannot find post for deletion',
-//             });
-//         } else {
-//             // Delete associated comments
-//             await commentModel.deleteMany({ _id: { $in: deletedPost.comments } });
-
-//             res.status(200).json({
-//                 message: 'Successfully deleted post and its comments',
-//                 data: deletedPost,
-//             });
-//         }
-//     } catch (err) {
-//         res.status(500).json({
-//             error: err.message,
-//         });
-//     }
-// };
-
-
-
-// exports.deletePostAndComments = async (req, res) => {
-//     try {
-//         // const postId = new mongoose.Types.ObjectId(req.params.id);
-//         const postId = req.params.id;
-//          console.log('postId:', postId);
-
-
-//         // Find the blog post
-//         const blog = await blogModel.findById(postId);
-//         if (!blog) {
-//             return res.status(404).json({
-//                 message: 'Blog post not found'
-//             });
-//         }
-
-//         // Find and delete associated comments
-//         const commentIds = blog.comments;
-//         await commentModel.deleteMany({ _id: { $in: commentIds } });
-
-//         // Delete the blog post
-//         await blogModel.findByIdAndRemove(postId);
-
-//         res.status(200).json({
-//             message: 'Post and associated comments deleted successfully'
-//         });
-//     } catch (err) {
-//         // Log the error for debugging if needed
-//         console.error(err);
-
-//         res.status(500).json({
-//             error: err.message
-//         });
-//     }
-// };
