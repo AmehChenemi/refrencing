@@ -1,5 +1,5 @@
 {
-    "name": "a_simple_blog_project",
+    "name": "a-simple-blog-project",
     "builds": [
       {
         "src": "server.js",
